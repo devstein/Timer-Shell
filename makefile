@@ -1,1 +1,2 @@
-clang shredder.c -g -Wall -o shredder
+all: shredder.c
+	clang	shredder.c	-o	shredder
