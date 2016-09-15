@@ -99,7 +99,7 @@ int main(int argc, char * argv[]) {
 
 
 		if (!pid){
-			write(2, cmd, sizeof(cmd) - 1);
+		//	write(2, cmd, sizeof(cmd) - 1);
 
 			char *test[] = {cmd};
 
