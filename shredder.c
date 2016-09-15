@@ -76,12 +76,14 @@ int main(int argc, char * argv[]) {
 	while(1){
 
 		//prompt and wait for cmd
-		write(1, prompt, sizeof(prompt) - 1);
+		if ( (write(1, prompt, sizeof(prompt) - 1)) == -1){
+			perror("Failed to write");
+		}
 		
 		//set signal for CTRL + C
 		signal(SIGINT, handler);
 
-		char buffer[BUFFER_SIZE];
+		char buffe[rBUFFER_SIZE];
 		int num_read = read(0, buffer, BUFFER_SIZE);
 
 		//handle EOF
